@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Study Habit Application</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="setting_title">Settings</string>
+    <string name="dark_theme">Dark Theme</string>
+    <string name="notification">Notification</string>
+    <string name="donate">Buy a cup of coffee $1</string>
+    <string name="ic_donate_description">Buying a cup of coffee $1</string>
+    <string name="dark_switch_description">Dark theme switch</string>
 </resources>

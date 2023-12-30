@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/settingTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="60dp"
+            android:text="@string/setting_title"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/darkThemeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/dark_theme"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/settingTitleTextView"
+            app:layout_constraintTop_toBottomOf="@+id/settingTitleTextView" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/darkThemeSwitch"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:layout_constraintBottom_toBottomOf="@+id/darkThemeTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/darkThemeTextView"
+            app:layout_constraintTop_toTopOf="@+id/darkThemeTextView"
+            android:contentDescription="@string/dark_switch_description"
+            android:clickable="true"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/notificationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/notification"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/darkThemeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/darkThemeTextView" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/notificationSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/notificationTextView"
+            app:layout_constraintStart_toStartOf="@+id/darkThemeSwitch"
+            app:layout_constraintTop_toTopOf="@+id/notificationTextView"
+            android:clickable="true"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/donateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/donate"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/notificationTextView"
+            app:layout_constraintTop_toBottomOf="@+id/notificationTextView" />
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_setting_donate"
+            app:layout_constraintBottom_toBottomOf="@+id/donateTextView"
+            app:layout_constraintStart_toStartOf="@+id/notificationSwitch"
+            app:layout_constraintTop_toTopOf="@+id/donateTextView"
+            android:contentDescription="@string/ic_donate_description"
+            android:clickable="true"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
