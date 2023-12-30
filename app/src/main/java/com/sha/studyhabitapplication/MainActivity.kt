@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setCurrentFragment(settingFragment)
 
     }
-    /Ernesto's comment
+    //Ernesto's comment
     // replacing Fragment
     //ref: https://www.geeksforgeeks.org/bottom-navigation-bar-in-android/
     private fun setCurrentFragment(fragment: Fragment) {
