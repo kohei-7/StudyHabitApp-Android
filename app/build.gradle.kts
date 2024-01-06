@@ -34,6 +34,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildToolsVersion = "33.0.1"
 
 }
 
@@ -44,13 +45,13 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     //Material Design 3 library
-    implementation ("com.google.android.material:material:<version>")
+    implementation ("androidx.compose.material3:material3:1.1.2")
     androidTestImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
     //
     //FragmentScenario for testing fragment
-    val fragmentVersion = "1.6.2"
-    debugImplementation("androidx.fragment:fragment-testing:$fragmentVersion")
-    implementation("com.android.support.test.espresso:espresso-intents:3.0.2")
+//    val fragmentVersion = "1.6.2"
+//    debugImplementation("androidx.fragment:fragment-testing:$fragmentVersion")
+//    implementation("com.android.support.test.espresso:espresso-intents:3.0.2")
     //
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
