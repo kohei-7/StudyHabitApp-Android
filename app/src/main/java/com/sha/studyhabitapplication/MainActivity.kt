@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 //        }
 
     }
-    //new comment
+
     // replacing Fragment
     //ref: https://www.geeksforgeeks.org/bottom-navigation-bar-in-android/
     private fun loadFragment(fragment: Fragment) {
