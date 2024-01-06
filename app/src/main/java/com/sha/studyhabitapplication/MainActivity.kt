@@ -3,20 +3,38 @@ package com.sha.studyhabitapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+    lateinit var bottomNavigation : BottomNavigationView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         val settingFragment = SettingFragment()
-        setCurrentFragment(settingFragment)
+        loadFragment(settingFragment)
+// ref: https://www.geeksforgeeks.org/bottom-navigation-bar-in-android-using-kotlin/
+    // should be enabled after the timer setting fragment added
+//        bottomNavigation = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+//        bottomNavigation.setOnItemSelectedListener {
+//            when (it.itemId) {
+//                R.id.settings -> {
+//                    loadFragment(SettingFragment())
+//                    true
+//                }
+//                R.id.timer -> {
+//                    loadFragment(TimerFragment())
+//                    true
+//                }
+//            }
+//        }
 
     }
     //new comment
     // replacing Fragment
     //ref: https://www.geeksforgeeks.org/bottom-navigation-bar-in-android/
-    private fun setCurrentFragment(fragment: Fragment) {
+    private fun loadFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.mainActivity_FrameLayout, fragment)
             commit()

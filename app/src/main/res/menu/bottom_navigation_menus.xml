@@ -3,10 +3,11 @@
     <item
         android:id="@+id/timer"
         android:icon="@drawable/ic_navigation_bar_timer"
-        android:title="@string/navigation_bar_timer"/>
+        android:title="@string/navigation_bar_timer"
+        />
     <item
         android:id="@+id/settings"
         android:icon="@drawable/ic_navigation_bar_setting"
         android:title="@string/navigation_bar_setting"
-        />
+               />
 </menu>
