@@ -8,4 +8,7 @@
     <string name="donate">Buy a cup of coffee $1</string>
     <string name="ic_donate_description">Buying a cup of coffee $1</string>
     <string name="dark_switch_description">Dark theme switch</string>
+    <string name="navigation_bar_timer">Timer</string>
+    <string name="navigation_bar_setting">Setting</string>
+
 </resources>

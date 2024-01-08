@@ -31,6 +31,7 @@
             app:layout_constraintStart_toStartOf="@+id/settingTitleTextView"
             app:layout_constraintTop_toBottomOf="@+id/settingTitleTextView" />
 
+
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/darkThemeSwitch"
             android:layout_width="48dp"
