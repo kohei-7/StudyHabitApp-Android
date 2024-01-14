@@ -8,4 +8,13 @@
     <string name="donate">Buy a cup of coffee $1</string>
     <string name="ic_donate_description">Buying a cup of coffee $1</string>
     <string name="dark_switch_description">Dark theme switch</string>
+    <!-- Main -->
+    <string name="popup_msg">Remaining</string>
+    <string name="hours_label">Hours</string>
+    <string name="minutes_label">Minutes</string>
+    <string name="seconds_label">Seconds</string>
+    <string name="alert">Please Enter the Time</string>
+    <string name="finish_button">Finish</string>
+    <string name="start_button">Start</string>
+    <string name="pause_button">Pause</string>
 </resources>
