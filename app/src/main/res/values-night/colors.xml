@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark mode Colors -->
+    <color name="screen_background_color">#04364A</color>
+    <color name="timer_boxes_color">#DAFFFB</color>
+    <color name="text_color">#176B87</color>
+    <color name="text_secondary_color">#64CCC5</color>
+    <color name="button_color">#64CCC5</color>
+    <color name="text_button_color">#176B87</color>
+    <color name="alert">#e2a3a8</color>
+</resources>
