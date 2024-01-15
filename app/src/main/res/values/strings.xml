@@ -8,7 +8,10 @@
     <string name="donate">Buy a cup of coffee $1</string>
     <string name="ic_donate_description">Buying a cup of coffee $1</string>
     <string name="dark_switch_description">Dark theme switch</string>
-    <!-- Main -->
+    <!-- Navigation Bar -->
+    <string name="navigation_bar_timer">Timer</string>
+    <string name="navigation_bar_setting">Setting</string>
+    <!-- Timer Fragment -->
     <string name="popup_msg">Remaining</string>
     <string name="hours_label">Hours</string>
     <string name="minutes_label">Minutes</string>
