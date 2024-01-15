@@ -12,23 +12,27 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        val settingFragment = SettingFragment()
-        loadFragment(settingFragment)
+        val timerFragment = TimerFragment()
+        loadFragment(timerFragment)
 // ref: https://www.geeksforgeeks.org/bottom-navigation-bar-in-android-using-kotlin/
     // should be enabled after the timer setting fragment added
-//        bottomNavigation = findViewById<BottomNavigationView>(R.id.bottomNavigation)
-//        bottomNavigation.setOnItemSelectedListener {
-//            when (it.itemId) {
-//                R.id.settings -> {
-//                    loadFragment(SettingFragment())
-//                    true
-//                }
-//                R.id.timer -> {
-//                    loadFragment(TimerFragment())
-//                    true
-//                }
-//            }
-//        }
+        bottomNavigation = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+        bottomNavigation.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.settings -> {
+                    loadFragment(SettingFragment())
+                    true
+                }
+                R.id.timer -> {
+                    loadFragment(TimerFragment())
+                    true
+                }
+
+                else -> {
+                    true
+                }
+            }
+        }
 
     }
 
