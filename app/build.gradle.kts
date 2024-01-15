@@ -34,6 +34,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildToolsVersion = "33.0.1"
 
 }
 
@@ -47,9 +48,9 @@ dependencies {
     androidTestImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
     //
     //FragmentScenario for testing fragment
-    val fragmentVersion = "1.6.2"
-    debugImplementation("androidx.fragment:fragment-testing:$fragmentVersion")
-    implementation("com.android.support.test.espresso:espresso-intents:3.0.2")
+//    val fragmentVersion = "1.6.2"
+//    debugImplementation("androidx.fragment:fragment-testing:$fragmentVersion")
+//    implementation("com.android.support.test.espresso:espresso-intents:3.0.2")
     //
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
