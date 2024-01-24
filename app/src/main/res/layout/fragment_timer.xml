@@ -69,7 +69,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/progress_bar" />
     <!-- HOURS MINUTES AND SECONDS BOXES -->
-    <com.google.android.material.textview.MaterialTextView
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/minutes_box"
         style="@style/boxes"
         android:layout_width="wrap_content"
@@ -78,7 +78,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:clickable="true"/>
-    <com.google.android.material.textview.MaterialTextView
+
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/hours_box"
         style="@style/boxes"
         android:layout_width="wrap_content"
@@ -86,8 +87,10 @@
         app:layout_constraintBottom_toTopOf="@id/guideline_h1"
         app:layout_constraintEnd_toStartOf="@+id/guideline_v1"
         app:layout_constraintStart_toStartOf="@+id/guideline_v2"
-        android:clickable="true"/>
-    <com.google.android.material.textview.MaterialTextView
+        android:clickable="true"
+        android:inputType="number|time"
+        />
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/seconds_box"
         style="@style/boxes"
         android:layout_width="wrap_content"
