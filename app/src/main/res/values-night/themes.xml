@@ -17,6 +17,8 @@
         <item name="android:textSize">25sp</item>
         <item name="android:padding">10dp</item>
         <item name="android:inputType">number</item>
+        <item name="android:gravity">right</item>
+
     </style>
     <style name="colon_timer">
         <item name="android:textColor">@color/text_color</item>
