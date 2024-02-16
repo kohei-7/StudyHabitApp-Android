@@ -3,6 +3,7 @@ package com.sha.studyhabitapplication
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,40 +14,39 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.google.android.material.textfield.TextInputEditText
+import kotlin.math.max
+import kotlin.time.Duration.Companion.minutes
 
 class TimerFragment : Fragment(R.layout.fragment_timer) {
-    private lateinit var hoursBoxEditTextView : TextInputEditText
+    private lateinit var hoursBoxEditTextView: TextInputEditText
     private lateinit var minutesBoxEditTextView: TextInputEditText
     private lateinit var secondsBoxEditTextView: TextInputEditText
     private lateinit var popupMSGTextView: TextView
     private lateinit var progressBar: ProgressBar
     private lateinit var adviceErrorTextView: TextView
-    private lateinit var finishBTN : Button
-    private lateinit var pauseBTN : Button
-    private lateinit var startBTN : Button
+    private lateinit var finishBTN: Button
+    private lateinit var pauseBTN: Button
+    private lateinit var startBTN: Button
+    private var seconds: Int = 0
+    private var minutes: Int = 0
+    private var hours: Int = 0
+    private final val input: String = "INPUT"
 
-    //ref: https://www.geeksforgeeks.org/ontextchangedlistener-in-android/
-    private var textWatcher: TextWatcher = object : TextWatcher{
-        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            Toast.makeText(activity, "before textWatcher", Toast.LENGTH_SHORT).show()
-        }
 
-        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            Toast.makeText(activity, "changed textWatcher", Toast.LENGTH_SHORT).show()
-        }
 
-        override fun afterTextChanged(s: Editable?) {
-            Toast.makeText(activity, "after text changed", Toast.LENGTH_SHORT).show()
-        }
 
-    }
     //Do not access graphical things through onCreate method
     // because this will be called before finishing onCreate() of Activity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
     }
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         val view: View = inflater.inflate(R.layout.fragment_timer, container, false)
         initViews(view)
         setVisibilities()
@@ -55,7 +55,8 @@ class TimerFragment : Fragment(R.layout.fragment_timer) {
         }
         return view
     }
-    private fun initViews(view: View){
+
+    private fun initViews(view: View) {
         hoursBoxEditTextView = view.findViewById(R.id.hours_box)
         minutesBoxEditTextView = view.findViewById(R.id.minutes_box)
         secondsBoxEditTextView = view.findViewById(R.id.seconds_box)
@@ -66,7 +67,8 @@ class TimerFragment : Fragment(R.layout.fragment_timer) {
         startBTN = view.findViewById(R.id.start_btn)
         pauseBTN = view.findViewById(R.id.pause_btn)
     }
-    private fun setVisibilities(){
+
+    private fun setVisibilities() {
         popupMSGTextView.isVisible = false
         progressBar.isVisible = false
         adviceErrorTextView.isVisible = false
@@ -74,9 +76,29 @@ class TimerFragment : Fragment(R.layout.fragment_timer) {
         pauseBTN.isVisible = false
         startBTN.isClickable = true
     }
+
     override fun onResume() {
         super.onResume()
 //        Toast.makeText(activity, "onResume method", Toast.LENGTH_LONG).show()
-        hoursBoxEditTextView.addTextChangedListener (textWatcher)
+//        hoursBoxEditTextView.addTextChangedListener(hoursTextWatcher)
+//        minutesBoxEditTextView.addTextChangedListener(minutesTextWatcher)
+//        secondsBoxEditTextView.addTextChangedListener(secondsTextWatcher)
+        secondsBoxEditTextView.setOnFocusChangeListener { v, hasFocus ->
+            if(!hasFocus){
+                if(!secondsBoxEditTextView.text.isNullOrEmpty()){
+                    var s : String = secondsBoxEditTextView.text.toString()
+                    seconds = s.toString().toInt()
+                    Log.i(input, seconds.toString())
+                    if (seconds > 60) {
+                        minutes += seconds / 60
+                        seconds %= 60
+                    }
+                    secondsBoxEditTextView.setText(seconds.toString())
+                }
+            }
+
+        }
+
+
     }
 }
